@@ -27,7 +27,7 @@ ofMesh makeGrid(ofRectangle square, int nHoriz, int nVert) {
 
 void ofApp::setup(){
 	ofSetVerticalSync(true);
-	ofMesh mesh = makeGrid(ofRectangle(100,100,600,600), 10, 10);
+	ofMesh mesh = makeGrid(ofRectangle(100,100,600,600), 20,20);
 	puppet.setup(mesh);
 	
 	puppet.setControlPoint(0); // pin the top left
@@ -40,6 +40,9 @@ void ofApp::update(){
 
 void ofApp::draw(){
 	ofBackground(0);
+	ofSetColor(100);
+	puppet.draw();
+	ofSetColor(150);
 	puppet.drawWireframe();
 	puppet.drawControlPoints();
 }

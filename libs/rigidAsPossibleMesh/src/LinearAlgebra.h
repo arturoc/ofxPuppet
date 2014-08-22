@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include <strstream>
 #include <cmath>
-using namespace std;
 
 
 // numerical error tolerances
@@ -62,10 +60,10 @@ struct Vector {
 	inline void normalize()
 		{ float f = this->magnitude(); v[0] /= f; v[1] /= f; v[2] /= f; }
 
-	inline string toString() const
+	inline std::string toString() const
 		{ char buf[256];
 		  sprintf(buf, "[ %5.5f %5.5f %5.5f %5.5f]", v[0], v[1], v[2], v[3]);
-		  return string(buf); }
+		  return std::string(buf); }
 
 	inline int equal(float const * with) const
 		{ return (v[0]==with[0] && v[1]==with[1] && v[2]==with[2] ); }
@@ -149,10 +147,10 @@ struct Point {
 	inline void normalize()
 		{ float f = this->magnitude(); p[0] /= f; p[1] /= f; p[2] /= f; }
 
-	inline string toString() const
+	inline std::string toString() const
 		{ char buf[256];
 		  sprintf(buf, "[ %5.5f %5.5f %5.5f %5.5f]", p[0], p[1], p[2], p[3]);
-		  return string(buf); }
+		  return std::string(buf); }
 
 	inline int equal(float const * with) const
 		{ return( p[0]==with[0] && p[1]==with[1] && p[2]==with[2] ); }
@@ -239,7 +237,7 @@ public:
 
 	int invert();     /* may fail */
 
-	string toString() const;
+	std::string toString() const;
 
 	inline float 
 	elem(int r, int c) const { return m_elem[r][c]; }

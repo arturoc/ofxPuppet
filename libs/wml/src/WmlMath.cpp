@@ -10,8 +10,9 @@
 
 #include "WmlMath.h"
 #include <float.h>
-#include <math.h>
-#include <random.h>
+#include <cmath>
+#include <stdlib.h>
+//#include <random.h>
 
 using namespace Wml;
 

@@ -51,14 +51,14 @@ Vector2<Real>::operator Real* ()
 template <class Real>
 Real Vector2<Real>::operator[] (int i) const
 {
-    assert(0 <= i && i <= 1);
+    //assert(0 <= i && i <= 1);
     return m_afTuple[i];
 }
 //----------------------------------------------------------------------------
 template <class Real>
 Real& Vector2<Real>::operator[] (int i)
 {
-    assert(0 <= i && i <= 1);
+    //assert(0 <= i && i <= 1);
     return m_afTuple[i];
 }
 //----------------------------------------------------------------------------

@@ -6,7 +6,8 @@
 
 class ofxPuppet {
 protected:
-	ofMesh originalMesh, deformedMesh;
+	ofMesh originalMesh;
+	ofVboMesh deformedMesh;
 	rmsmesh::RigidMeshDeformer2D deformer;
 	bool needsUpdating;
 	set<unsigned int> controlPoints;
@@ -17,7 +18,8 @@ public:
 	
 	void setup(ofMesh & mesh);
 	void update();
-	
+
+	void draw();
 	void drawFaces();
 	void drawWireframe();
 	void drawControlPoints();

@@ -1,1 +1,2 @@
 ofxPuppet
+ofxOpenCv

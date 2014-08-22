@@ -29,6 +29,11 @@ void ofxPuppet::update(){
 	deformer.UpdateDeformedMesh( &deformedMesh, true );
 }
 
+
+void ofxPuppet::draw(){
+	deformedMesh.draw();
+}
+
 void ofxPuppet::drawFaces(){	
 	deformedMesh.drawFaces();
 }

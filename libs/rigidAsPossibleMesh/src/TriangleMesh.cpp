@@ -6,7 +6,10 @@
 #include "LinearAlgebra.h"
 
 #include <fstream>
+#include <string.h>
+#include <sstream>
 
+using namespace std;
 using namespace rmsmesh;
 
 // [RMS] need to export stl vector template instantiations
@@ -27,7 +30,7 @@ tm_fileformat(OBJ_FORMAT)
 }
 
 
-TriangleMesh::TriangleMesh(string filename, 
+TriangleMesh::TriangleMesh(string filename,
 						   unsigned int vertex_sizehint, 
 						   unsigned int triangle_sizehint)
 : tm_filename(filename)
@@ -539,7 +542,7 @@ bool TriangleMesh::tm_readobj()
 	Wml::Vector3f vVertex2;
 	unsigned int ivec[3];
 	while(in){
-		ostrstream s;
+		ostringstream s;
 		in >> command;
 		if(!in)
 			continue;

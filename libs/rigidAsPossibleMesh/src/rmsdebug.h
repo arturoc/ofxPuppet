@@ -51,7 +51,7 @@ static string _RMSInfoString(char * str, ...)
 
 #ifndef USE_WINDOWS_DEBUG
 static void Debugbreak() {
-	abort();
+	//abort();
 }
 #endif
 

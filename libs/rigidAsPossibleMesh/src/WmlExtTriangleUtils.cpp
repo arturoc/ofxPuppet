@@ -3,6 +3,8 @@
 #include "WmlExtTriangleUtils.h"
 
 #include <limits>
+#include <stdlib.h>
+#include <cmath>
 
 using namespace Wml;
 

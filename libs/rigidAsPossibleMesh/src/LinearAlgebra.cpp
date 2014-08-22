@@ -1,4 +1,5 @@
 #include "LinearAlgebra.h"
+#include <string.h>
 
 using namespace rmsmesh;
 
@@ -237,7 +238,7 @@ Matrix::multiply(float * vec)
 }
 
 
-string
+std::string
 Matrix::toString() const
 {
 	char buf[256];
@@ -245,7 +246,7 @@ Matrix::toString() const
 			 m_elem[0][0], m_elem[0][1], m_elem[0][2], m_elem[0][3],
 			 m_elem[1][0], m_elem[1][1], m_elem[1][2], m_elem[1][3],
 			 m_elem[2][0], m_elem[2][1], m_elem[2][2], m_elem[2][3] );
-	return string(buf);
+	return std::string(buf);
 }
 
 

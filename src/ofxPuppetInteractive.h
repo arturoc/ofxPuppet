@@ -12,8 +12,6 @@ protected:
 public:
 	ofxPuppetInteractive();
 	
-	void draw();
-	
 	void setSelectionRadius(float selectionRadius);
 	void setEvents(bool enableEvents);
 	void mousePressed(ofMouseEventArgs& e);

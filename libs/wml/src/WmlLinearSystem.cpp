@@ -11,6 +11,7 @@
 #include "WmlLinearSystem.h"
 #include <string.h>
 #include <assert.h>
+#include <cmath>
 using namespace Wml;
 
 #define WML_INSTANTIATE_BEFORE
