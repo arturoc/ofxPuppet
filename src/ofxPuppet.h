@@ -27,7 +27,7 @@ public:
 	void setControlPoint(int i);
 	void setControlPoint(int i, const ofVec2f& position);
 	void removeControlPoint(int i);
-	
+	set<unsigned int> getControlPoints(){ return controlPoints; }
 	ofMesh& getOriginalMesh();
 	ofMesh& getDeformedMesh();
 };

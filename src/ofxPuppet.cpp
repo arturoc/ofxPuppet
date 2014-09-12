@@ -11,6 +11,7 @@ void ofxPuppet::setup(ofMesh & mesh){
 	mesh.setMode(OF_PRIMITIVE_TRIANGLES);	
 	originalMesh = mesh, deformedMesh = mesh;
 	deformer.InitializeFromMesh( &originalMesh );
+	controlPoints.clear();
 	needsUpdating = true;
 }
 
