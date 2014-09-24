@@ -16,7 +16,7 @@ protected:
 public: 
 	ofxPuppet();
 	
-	void setup(ofMesh & mesh);
+	void setup(const ofMesh & mesh);
 	void update();
 
 	void draw();
@@ -26,10 +26,11 @@ public:
 	
 	void setControlPoint(int i);
 	void setControlPoint(int i, const ofVec2f& position);
+	void moveControlPoint(int i, const ofVec2f& position);
 	void removeControlPoint(int i);
-	set<unsigned int> getControlPoints(){ return controlPoints; }
-	ofMesh& getOriginalMesh();
-	ofMesh& getDeformedMesh();
+	const set<unsigned int> & getControlPoints(){ return controlPoints; }
+	const ofMesh& getOriginalMesh();
+	const ofMesh& getDeformedMesh();
 };
 
 

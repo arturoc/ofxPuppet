@@ -7,9 +7,10 @@ ofxPuppet::ofxPuppet()
 ,nSelected(0) {
 }
 
-void ofxPuppet::setup(ofMesh & mesh){
-	mesh.setMode(OF_PRIMITIVE_TRIANGLES);	
+void ofxPuppet::setup(const ofMesh & mesh){
 	originalMesh = mesh, deformedMesh = mesh;
+	originalMesh.setMode(OF_PRIMITIVE_TRIANGLES);
+	deformedMesh.setMode(OF_PRIMITIVE_TRIANGLES);
 	deformer.InitializeFromMesh( &originalMesh );
 	controlPoints.clear();
 	needsUpdating = true;
@@ -17,7 +18,6 @@ void ofxPuppet::setup(ofMesh & mesh){
 
 void ofxPuppet::update(){
 	if(needsUpdating) {
-		int nConstraints = controlPoints.size();
 		set<unsigned int>::iterator cur(controlPoints.begin()), end(controlPoints.end());
 		while ( cur != end ) {
 			unsigned int nVertex = *cur++;
@@ -61,6 +61,14 @@ void ofxPuppet::setControlPoint(int i, const ofVec2f& position) {
 	if (controlPoints.find(i) == controlPoints.end()) {
 		controlPoints.insert(i);
 	}
+	moveControlPoint(i,position);
+}
+
+void ofxPuppet::moveControlPoint(int i, const ofVec2f& position){
+	if (controlPoints.find(i) == controlPoints.end()) {
+		ofLogError() << "moveControl point cannot find control point " << i;
+		return;
+	}
 	deformedMesh.getVertices()[i].set(position.x, position.y);
 	needsUpdating = true; 
 }
@@ -71,10 +79,10 @@ void ofxPuppet::removeControlPoint(int i) {
 	needsUpdating = true; 
 }
 
-ofMesh& ofxPuppet::getOriginalMesh() {
+const ofMesh& ofxPuppet::getOriginalMesh() {
 	return originalMesh;
 }
 
-ofMesh& ofxPuppet::getDeformedMesh() {
+const ofMesh& ofxPuppet::getDeformedMesh() {
 	return deformedMesh;
 }
