@@ -79,6 +79,14 @@ void ofxPuppet::removeControlPoint(int i) {
 	needsUpdating = true; 
 }
 
+void ofxPuppet::clearControlPoints(){
+	for(auto p: controlPoints){
+		deformer.RemoveHandle(p);
+	}
+	controlPoints.clear();
+	needsUpdating = true;
+}
+
 const ofMesh& ofxPuppet::getOriginalMesh() {
 	return originalMesh;
 }
